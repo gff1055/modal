@@ -1,0 +1,79 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.card_img{										/* Estilo das DIVs que contem miniaturas das imagens */
+	width: 300px;
+	height: 300px;
+	overflow: hidden;							/* O conteudo restante nao é mostrado */
+	margin: 25px;								/* Margem entre as divs */
+}
+
+.small_img{										/* Estilo das miniaturas das imagens */
+	height: 100%;								/* Cobre toda a div */
+	cursor: pointer;
+	transition: all linear 0.4s;
+}
+
+.small_img:hover{								/* Estilo das miniaturas ao passar o mouse */
+	filter: grayscale(100%);					/* Escala de cinza */
+	transform: scale(1.1);						/* Zoom na imagem */
+}
+
+.row{											/* Estilo das linhas de miniaturas */
+	display: flex;
+	justify-content: center;					/* Alinhadas ao centro */
+	flex-wrap: wrap;
+}
+
+#modal_img{										/* Estilo da imagem da janela modal */
+	width: 65vw;								/* Largura da imagem */
+	transform: scale(0);						
+	transition: all linear .3s;					/* Transicao nas animacoes */
+}
+
+.modal_active #modal_img{
+	transform: scale(1);
+}
+
+.modal{											/* Estilo da div para a janela modal*/
+	width: 100vw;								/* Abrange toda a largura da tela */
+	height: 100vh;								/* Abrange toda a altura da tela */
+	background-color: rgba(0,0,0,.7);			/* Cor de fundo preto meio transparente */
+	position: fixed;
+	visibility: hidden;
+	z-index: 1;									/* Garante que o modal ficara no primeiro plano */
+	opacity: 0;
+	transition: visibility 0.8s linear, opacity 0.5s linear;	/* Animacao ao exibir o modal */
+}
+
+.modal_content{									/* Estilos da div que contem a imagem da janela modal */
+	display: flex;								/* div usa flexbox */
+	justify-content: center;					/* imagem é alinhada horizontalmente*/
+	align-items: center;						/* imagem é alinhada verticalmente */
+	height: 100vh;								/* altura da imagem */
+}
+
+#bt_close{										/*Estilos do botao fechar da janela modal*/
+	color: #fff;								/*Cor da fonte*/
+	background-color: #000;						/* Cor de fundo */
+	position: absolute;
+	top:10px;									/* Botao esta a 10px do topo */
+	right:10px;									/* Botao esta a 10px da direita */
+	padding: 5px 10px;							/* Dimensoes do preenchimento */
+	font-size: 25px;							/* Tamanho do preenchimento */
+	border: solid 1px #fff;						/* Estilos da borda */
+	transition: all ease-out .4s;				/* Transicao nas animacoes */
+	cursor: pointer;							/* Estilizando ponteiro */
+}
+
+#bt_close:hover{								/* Estilo do botao fechar ao passar passar o mouse por cima */
+	background-color: #f00;
+}
+
+.modal_active{
+	visibility: visible;
+	opacity: 1;
+
+}
